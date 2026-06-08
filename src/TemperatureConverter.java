@@ -25,6 +25,8 @@ public class TemperatureConverter {
 
                 if (scan.hasNextDouble()) {
                     double temperature = scan.nextDouble();
+                    scnr.nextLine();
+                    
                     System.out.print("Enter the unit (C or F): ");
 
                     String unit = scnr.nextLine();
