@@ -33,9 +33,9 @@ public class TemperatureConverter {
                         double convertedTemp = convertTemperature(temperature, unit);
 
                         if (unit.equalsIgnoreCase("C")) {
-                            System.out.println(temperature + "C is equal to " + convertedTemp + "F");
+                            System.out.println(temperature + " C is equal to " + convertedTemp + " F");
                         } else {
-                            System.out.println(temperature + "F is equal to " + convertedTemp + "C");
+                            System.out.println(temperature + " F is equal to " + convertedTemp + " C");
                         }
                     } else {
                         System.out.println("Error message displayed, reprompt shown");
