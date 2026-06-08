@@ -100,7 +100,6 @@ public class TemperatureConverter {
                     System.out.println("Error message displayed, reprompt shown");
                 }
 
-                scan.close();
             }
         }
 
