@@ -38,11 +38,11 @@ public class TemperatureConverter {
                             System.out.println(temperature + "F is equal to " + convertedTemp + "C");
                         }
                     } else {
-                        System.out.println("Error message displayed, reprompt shown");
+                        System.out.println("Error message displayed, re-prompt shown");
                     }
                 }
                 else {
-                    System.out.println("Error message displayed, reprompt shown");
+                    System.out.println("Error message displayed, re-prompt shown");
                 }
                 
             }
