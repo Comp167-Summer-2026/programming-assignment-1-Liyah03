@@ -25,28 +25,27 @@ public class TemperatureConverter {
 
                 if (scan.hasNextDouble()) {
                     double temperature = scan.nextDouble();
-                    scnr.nextLine();
                     
                     System.out.print("Enter the unit (C or F): ");
+                    if (scnr.hasNextLine()) {
+                        String unit = scnr.nextLine();
 
-                    String unit = scnr.nextLine();
+                        if (unit.equalsIgnoreCase("C") || unit.equalsIgnoreCase("F")) {
+                            double convertedTemp = convertTemperature(temperature, unit);
 
-                    if (unit.equalsIgnoreCase("C") || unit.equalsIgnoreCase("F")) {
-                        double convertedTemp = convertTemperature(temperature, unit);
-
-                        if (unit.equalsIgnoreCase("C")) {
-                            System.out.println(temperature + "C is equal to " + convertedTemp + "F");
+                            if (unit.equalsIgnoreCase("C")) {
+                                System.out.println(temperature + "C is equal to " + convertedTemp + "F");
+                            } else {
+                                System.out.println(temperature + "F is equal to " + convertedTemp + "C");
+                            }
                         } else {
-                            System.out.println(temperature + "F is equal to " + convertedTemp + "C");
+                            System.out.println("Error message displayed, re-prompt shown");
                         }
-                    } else {
-                        System.out.println("Error message displayed, re-prompt shown");
-                    }
-                }
-                else {
+                    } 
+                } else {
                     System.out.println("Error message displayed, re-prompt shown");
                 }
-                
+                scan.close();
             }
         }
 
