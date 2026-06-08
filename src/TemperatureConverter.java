@@ -45,11 +45,11 @@ public class TemperatureConverter {
                 else {
                     System.out.println("Error message displayed, reprompt shown");
                 }
+                scan.close();
             }
         }
 
         System.out.println("Program exits gracefully");
-
         scnr.close();
     }
 }
