@@ -42,10 +42,8 @@ public class TemperatureConverter {
                     else {
                         System.out.println("Error message displayed, reprompt shown");
                     }
-                    }
                 else {
                     System.out.println("Error message displayed, reprompt shown");
-                    }
                 }
             }
         }
@@ -54,3 +52,4 @@ public class TemperatureConverter {
 
         scnr.close();
     }
+}
