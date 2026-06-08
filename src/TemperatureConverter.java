@@ -5,8 +5,7 @@ public class TemperatureConverter {
     public static double convertTemperature(double temperature, String unit) {
         if (unit.equalsIgnoreCase("C")) {
             return ((temperature * (9.0 / 5.0)) + 32.0);
-        }
-        else if (unit.equalsIgnoreCase("F")) {
+        } else if (unit.equalsIgnoreCase("F")) {
             return ((temperature - 32.0) * (5.0 / 9.0));
         }
         return 0.0;
@@ -25,27 +24,30 @@ public class TemperatureConverter {
 
                 if (scan.hasNextDouble()) {
                     double temperature = scan.nextDouble();
-                    
-                    System.out.print("Enter the unit (C or F): ");
-                    if (scnr.hasNextLine()) {
-                        String unit = scnr.nextLine();
+
+                    boolean validUnit = false;
+                    String unit = "";
+
+                    while (!validUnit) {
+                        System.out.print("Enter the unit (C or F): ");
+                        unit = scnr.nextLine();
 
                         if (unit.equalsIgnoreCase("C") || unit.equalsIgnoreCase("F")) {
-                            double convertedTemp = convertTemperature(temperature, unit);
-
-                            if (unit.equalsIgnoreCase("C")) {
-                                System.out.println(temperature + "C is equal to " + convertedTemp + "F");
-                            } else {
-                                System.out.println(temperature + "F is equal to " + convertedTemp + "C");
-                            }
+                            validUnit = true;
                         } else {
                             System.out.println("Error message displayed, re-prompt shown");
                         }
-                    } 
+                    }
+                    double convertedTemperature = convertTemperature(temperature, unit);
+
+                    if (unit.equalsIgnoreCase("C")) {
+                        System.out.println(temperature + " C is equal to " + convertedTemperature + " F");
+                    } else {
+                        System.out.println(temperature + " F is equal to " + convertedTemperature + " C");
+                    }
                 } else {
                     System.out.println("Error message displayed, re-prompt shown");
                 }
-                scan.close();
             }
         }
 
