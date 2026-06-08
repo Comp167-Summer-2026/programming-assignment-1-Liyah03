@@ -16,12 +16,41 @@ public class TemperatureConverter {
         Scanner scnr = new Scanner(System.in);
         String input = "";
 
-        System.out.print("Enter a temperature value (or type 'stop' to quit): ");
-        input = scnr.nextLine();
-
         while (!input.equalsIgnoreCase("stop")) {
-            
-        }
-    }
+            System.out.print("Enter a temperature value (or type 'stop' to quit): ");
+            input = scnr.nextLine();
 
-}
+            if (!input.equalsIgnoreCase("stop")) {
+                Scanner scan = new Scanner(input);
+
+                if (scan.hasNextDouble()) {
+                    double temperature = scan.nextDouble();
+                    System.out.print("Enter the unit (C or F): ");
+
+                    String unit = scnr.nextLine();
+
+                    if (unit.equalsIgnoreCase("C") || unit.equalsIgnoreCase("F")) {
+                        double convertedTemp = convertTemperature(temperature, unit);
+
+                        if (unit.equalsIgnoreCase("C")) {
+                            System.out.println(temperature + "°C is equal to " + convertedTemp + "°F");
+                        }
+                        else {
+                            System.out.println(temperature + "°F is equal to " + convertedTemp + "°C");
+                        }
+                    }
+                    else {
+                        System.out.println("Error message displayed, reprompt shown");
+                    }
+                    }
+                else {
+                    System.out.println("Error message displayed, reprompt shown");
+                    }
+                }
+            }
+        }
+
+        System.out.println("Program exits gracefully");
+
+        scnr.close();
+    }
