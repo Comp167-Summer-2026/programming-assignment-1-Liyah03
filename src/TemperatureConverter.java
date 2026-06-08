@@ -34,14 +34,13 @@ public class TemperatureConverter {
 
                         if (unit.equalsIgnoreCase("C")) {
                             System.out.println(temperature + "°C is equal to " + convertedTemp + "°F");
-                        }
-                        else {
+                        } else {
                             System.out.println(temperature + "°F is equal to " + convertedTemp + "°C");
                         }
-                    }
-                    else {
+                    } else {
                         System.out.println("Error message displayed, reprompt shown");
                     }
+                }
                 else {
                     System.out.println("Error message displayed, reprompt shown");
                 }
